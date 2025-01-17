@@ -156,7 +156,7 @@ void entry() {
   }
   logdev_end(DL0, NULL);
 
-  logdev_beg(DL0, "monos :)");
+  logdev_beg(DL0, "nanos :)");
   log_kerninfo(DL0);
   logdev_end(DL0, NULL);
 
