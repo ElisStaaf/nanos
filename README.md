@@ -13,10 +13,16 @@ So yeah, this is my *real* attempt at making a good kernel.
 
 ## Install
 ```sh
+# Prerequisites
+git clone https://github.com/limine-bootloader/limine -b v4.x-branch-binary $HOME/limine
+export LIMINE_PATH="$HOME/limine"
+
+# Fetch
 git clone https://github.com/ElisStaaf/nanos
 cd nanos
 
+# Install
 ./gen.py
 ninja
-qemu-system-x86_64 out.iso -serial stdio
+qemu-system-x86_64 nanos.iso -serial stdio
 ```

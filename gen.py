@@ -87,8 +87,8 @@ with open('build.ninja', 'w') as fout:
     fout.write('subninja kernel/build.ninja\n')
     fout.write('subninja usr/build.ninja\n')
     deps = ' '.join(glob.glob('boot/*'))
-    fout.write(f'build out.iso: sh geniso.sh {" ".join(boot_files)} | {deps}\n')
-    fout.write(f'default out.iso\n')
+    fout.write(f'build nanos.iso: sh geniso.sh {" ".join(boot_files)} | {deps}\n')
+    fout.write(f'default nanos.iso\n')
 
 with open('compile_commands.json', 'w') as fout:
     fout.write(subp.getoutput('ninja -t compdb'))
