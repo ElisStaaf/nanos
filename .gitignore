@@ -8,5 +8,5 @@ compile_commands.json
 .cache
 build.ninja
 *.tar
-boot/usersp
+boot/usr/
 *.swp

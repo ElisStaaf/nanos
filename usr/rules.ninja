@@ -15,4 +15,4 @@ rule as
     command = nasm $aflags $debug -o $out $in
 
 rule ld
-    command = ld.lld $flags $in -o $out -T usersp/linker.ld --oformat binary -nostdlib --color-diagnostics $debug
+    command = ld.lld $flags $in -o $out -T usr/linker.ld --oformat binary -nostdlib --color-diagnostics $debug

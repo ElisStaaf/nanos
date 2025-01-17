@@ -13,7 +13,7 @@ struct limine_module_request limine_module_req = {
 
 void log_kerninfo(devp_t d) {
   putfn(d, "version: %s", NANOS_VERSION);
-  putfn(d, "author: %s", "monomere");
+  putfn(d, "author: %s", "Elis Staaf");
   putfn(d, "contribs: %s", NANOS_CONTRIBS);
   putfn(d, "bootloader: %s %s", bootloader_info.response->name,
                                 bootloader_info.response->version);
@@ -72,8 +72,8 @@ void *jump_usersp_int_(struct x86_stack_frame *frame, uint64_t code, void *data,
   return NULL;
 }
 
-asm(
-"x86_jump_to_usersp:\n"
+asm (
+"x86_jump_to_usersp:\n"               // x86_jump_to_usersp:
 "   movq %rdi, %r8\n"                 // r8 ← rdi(code)
 "   movq %rsi, %r9\n"                 // r9 ← rsi(stack)
 "   movq $1, %rdi\n"                  // rdi ← 1
@@ -92,7 +92,7 @@ asm(
 "   retq\n"                           // return
 );
 
-int x86_jump_to_usersp(void *code, void *stack) {}
+int x86_jump_to_usersp(void *code, void *stack);
 
 static int jump_usersp(void *code, void *stack) {
   kernel_funcs.scrdev_getscr = &scrdev_getscr;

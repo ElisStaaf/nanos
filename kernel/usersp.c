@@ -75,7 +75,6 @@ asm(
 "   movq %rdx, %rsi\n"            //     rsi<#2> ← rdx
 "   testq %rsi, %rsi\n"           //     test rsi & rsi -- don't allow `to` to be 0
 "   xorl %eax, %eax\n"            //     eax ← 0
-"   setq %al\n"                   //     eax ← rsi == 0
 "   addq %rax, %rsi\n"            //     rsi ← rsi + eax
 "   movq %rbx, %rdx\n"            //     rdx<#3> ← rbx (← <old#1>)
 "   movq %rsp, 0(%rsi)\n"         //     rsi:save_frame_t.rsp ← rsp -- save stack

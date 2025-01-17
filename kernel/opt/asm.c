@@ -1,6 +1,5 @@
 #include "asm.h"
 
-#ifdef NANOS_X86_64_OPT_ASM
 #define NMD_ASSEMBLY_IMPLEMENTATION
 #include "nmd_assembly.h"
 
@@ -9,7 +8,6 @@ void opt_printdisasm(void *addr, void *buf, size_t len, size_t count) {
     if(instr == NULL) instr = pmm_alloc_pages(1);
     int first = 1;
     
-#ifdef NANOS_PLATFORM_X86_64
     while(len != 0 && count != 0) {
         if(!nmd_x86_decode(buf, len, instr, NMD_X86_MODE_64, NMD_X86_DECODER_FLAGS_MINIMAL)) {
             if(!first) putfn(DL0, "%p (bad)", addr);
@@ -33,11 +31,4 @@ void opt_printdisasm(void *addr, void *buf, size_t len, size_t count) {
 
         putfn(DL0, "%p %s", addr, str);
     }
-#else
-#error unknown platform
-#endif
 }
-
-#else
-
-#endif
