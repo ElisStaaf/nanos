@@ -1,0 +1,18 @@
+include rules.ninja
+
+cflags = -Wall -Wno-unused-function -fdiagnostics-color -nostdlib $
+         -target $target -ffreestanding -mno-mmx -mno-3dnow $
+         -mabi=sysv -fno-stack-protector -mno-red-zone -fno-stack-check $
+         -fno-pic
+
+aflags = -Wall -felf64
+
+rule cc
+    command = clang -c $in -o $out $cflags -MD -MF $out.d $debug -DMONOS -Ikernel $platformdef
+    depfile = $out.d
+
+rule as
+    command = nasm $aflags $debug -o $out $in
+
+rule ld
+    command = ld.lld $flags $in -o $out -T usersp/linker.ld --oformat binary -nostdlib --color-diagnostics $debug

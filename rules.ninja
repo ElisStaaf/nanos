@@ -1,0 +1,5 @@
+debug = -g
+target = x86_64-pc-none-elf
+
+rule sh
+    command = bash $in $out
