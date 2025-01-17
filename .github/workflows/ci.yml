@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Install NASM, Ninja and Python3
-      run: sudo apt install -y nasm ninja-build python3
+    - name: Install most build dependencies
+      run: sudo apt install -y nasm ninja-build lld python3
     - name: Install limine
       run: git clone https://github.com/limine-bootloader/limine -b v4.x-branch-binary $HOME/limine
     - name: Add limine path
