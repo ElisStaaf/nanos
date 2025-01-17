@@ -6,6 +6,9 @@ So yeah, this is my *real* attempt at making a good kernel.
 
 ## Install
 ```sh
+git clone https://github.com/ElisStaaf/nanos
+cd nanos
+
 python3 gen.py
 ninja
 qemu-system-x86_64 out.iso -serial stdio
