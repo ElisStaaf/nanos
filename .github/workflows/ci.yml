@@ -1,0 +1,21 @@
+name: Build CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install build dependencies
+      run: sudo apt install -y nasm python3
+      run: git clone https://github.com/limine-bootloader/limine -b v4.x-branch-binary $HOME/limine
+      run: export LIMINE_PATH="$HOME/limine"
+    - name: Generate build files
+      run: ./gen.py
+    - name: Build
+      run: ninja
