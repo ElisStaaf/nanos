@@ -72,6 +72,7 @@ void *jump_usersp_int_(struct x86_stack_frame *frame, uint64_t code, void *data,
   return NULL;
 }
 
+/*
 asm (
 "x86_jump_to_usersp:\n"               // x86_jump_to_usersp:
 "   movq %rdi, %r8\n"                 // r8 ← rdi(code)
@@ -90,7 +91,7 @@ asm (
 "   movq (kernel_state+0), %rsp\n"    // rsp ← kernel_state.rsp -- restore kernel stack
 "   movq (kernel_state+8), %rbp\n"    // rbp ← kernel_state.rbp
 "   retq\n"                           // return
-);
+); */
 
 int x86_jump_to_usersp(void *code, void *stack);
 
