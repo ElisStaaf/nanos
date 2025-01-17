@@ -10,6 +10,7 @@ So yeah, this is my *real* attempt at making a good kernel.
 * [nasm](https://nasm.us/)
 * [ninja](https://ninja-build.org/)
 * [python3](https://www.python.org/)
+* [lld](https://lld.llvm.org/)
 
 ## Install
 ```sh
