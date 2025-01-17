@@ -5,11 +5,11 @@ was built upon very weak glue. Like, something you would buy at the supermarket!
 So yeah, this is my *real* attempt at making a good kernel.
 
 ## Requirements
-* clang
-* limine
-* nasm
-* ninja
-* python3
+* [clang](https://clang.llvm.org/)
+* [limine](https://limine-bootloader.org/)
+* [nasm](https://nasm.us/)
+* [ninja](https://ninja-build.org/)
+* [python3](https://www.python.org/)
 
 ## Install
 ```sh
