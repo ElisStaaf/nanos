@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import glob, subprocess as subp, sys
 
 # this is bad code im just lazy

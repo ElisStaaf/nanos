@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 mkdir -p boot
 cp $LIMINE_PATH/limine-cd.bin boot || exit 1
 cp $LIMINE_PATH/limine-cd-efi.bin boot || exit 1
