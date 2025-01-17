@@ -9,9 +9,9 @@ int main() {
 #ifdef NANOS_PLATFORM_X86_64
     const char *arch = "x86_64";
 #else
-    const char *arch = "(unknown)";
+    const char *arch = "unknown";
 #endif
-    funcs.putfn(funcs.DL0, "nanos %s (%s) nanos-usersp 0.0.2a: Tue, Aug 7 13:22:30 MSK 2022; %s",
+    funcs.putfn(funcs.DL0, "nanos %s (%s) nanos-usersp 0.1: Fri, Jan 17 13:02:04 2025; %s",
         NANOS_VERSION, NANOS_CONTRIBS, arch);
     return 0;
 }
