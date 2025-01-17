@@ -11,15 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Install most build dependencies
-      run: sudo apt install -y nasm ninja-build lld python3
-    - name: Fetch limine
-      run: git clone https://github.com/limine-bootloader/limine -b v4.x-branch-binary $HOME/limine
-    - name: Build limine
-      run: cd $HOME/limine && make && cd -
-    - name: Add limine path
-      run: export LIMINE_PATH="$HOME/limine"
-    - name: Generate build files
-      run: ./gen.py
+    - name: Install dependencies
+      run: sudo apt install -y nasm ninja-build lld python3 && \
+           git clone https://github.com/limine-bootloader/limine -b v4.x-branch-binary $HOME/limine && \
+           cd $HOME/limine && make && cd -
     - name: Build
-      run: ninja
+      run: export LIMINE_PATH="$HOME/limine" && \
+           ./gen.py && \
+           ninja
