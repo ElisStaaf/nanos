@@ -82,7 +82,7 @@ with open('usr/build.ninja', 'w') as fout:
 
 with open('build.ninja', 'w') as fout:
     fout.write('# generated automatically, edit gen.py instead\n')
-    fout.write(f'platformdef = -DMONOS_PLATFORM_{arch.upper()} {"-DMONOS_X86_64_OPT_ASM" if opt["asm"] else ""}\n')
+    fout.write(f'platformdef = -DNANOS_PLATFORM_{arch.upper()} {"-DNANOS_X86_64_OPT_ASM" if opt["asm"] else ""}\n')
     fout.write('include rules.ninja\n')
     fout.write('subninja kernel/build.ninja\n')
     fout.write('subninja usr/build.ninja\n')
