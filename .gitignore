@@ -1,16 +1,22 @@
+# Output files
 **/*.elf
 **/*.bin
 **/*.iso
 **/*.o
 
+# Dotfiles
 .cache
+.ninja*
+
+# Build files
 build
 compile_commands.json
-.ninja*
 build.ninja
 
+# Bootfiles
 boot/usr/
 boot/limine.sys
 
+# Archive files
 *.tar
 *.swp
